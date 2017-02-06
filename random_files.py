@@ -43,7 +43,7 @@ if __name__ == "__main__":
 				next_word = random_string(*word_length) + (" " * random.randint(*word_length))
 				file.write(next_word)
 
-		words_count += j #save word count
-		print(os.path.basename(file.name) + " " + str(j))
+		words_count += (j + 1) #save word count
+		print(os.path.basename(file.name) + " " + str(j + 1))
 
 	print("words_count: " + str(words_count))

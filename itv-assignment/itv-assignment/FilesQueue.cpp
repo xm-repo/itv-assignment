@@ -42,7 +42,7 @@ void FilesQueue::FindFilesInDirectory(const std::string & directory)
 	do {
 
 		const std::string file_name = file_data.cFileName;
-		const std::string full_file_name = directory + "/" + file_name;
+		const std::string full_file_name = directory + "\\" + file_name;
 
 		const bool is_directory = (file_data.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != 0;
 		if (!is_directory) {
