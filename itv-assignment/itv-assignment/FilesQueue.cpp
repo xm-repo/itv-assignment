@@ -21,7 +21,7 @@ bool FilesQueue::getFile(std::string & file)
 	std::lock_guard<std::mutex> guard(mFilesQueueMutex); //protect mFilesQueue from races
 
 	if(!mFilesQueue.empty()) {
-		file = mFilesQueue.front();
+		file = mFilesQueue.front(); //?
 		mFilesQueue.pop();
 		return true;
 	}
@@ -46,7 +46,7 @@ void FilesQueue::FindFilesInDirectory(const std::string & directory)
 
 		const bool is_directory = (file_data.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != 0;
 		if (!is_directory) {
-			mFilesQueue.push(full_file_name);
+			mFilesQueue.push(full_file_name); //?
 #if DEBUG
 			std::cout << full_file_name << std::endl;
 #endif
